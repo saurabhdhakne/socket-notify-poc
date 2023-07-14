@@ -26,7 +26,7 @@ app.get('/notify/:message', (req, res) => {
 });
 
 // Start the server
-const port = 80;
+const port = 8080;
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
