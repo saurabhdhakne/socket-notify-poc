@@ -22,7 +22,7 @@
   
       // Function to send a notification request to the server
       function notifyServer() {
-        fetch('http://localhost:3000/notify')
+        fetch('https://socket-notify-poc.vercel.app/notify')
           .then(response => response.text())
           .then(data => console.log(data))
           .catch(error => console.error(error));
