@@ -18,6 +18,13 @@ app.get('/notify', (req, res) => {
   res.send('Notification sent');
 });
 
+app.get('/notify/:message', (req, res) => {
+  const message = req.params.message;
+  // Emit a socket event called 'notification' with the message
+  io.emit('notification', message);
+  res.send(message)
+});
+
 // Start the server
 const port = 3000;
 server.listen(port, () => {
