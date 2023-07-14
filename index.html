@@ -13,10 +13,14 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <script>
-        var socket = io.connect('https://socket-notify-poc.vercel.app', {secure: true});
+        // var socket = io.connect('https://socket-notify-poc.vercel.app', {secure: true});
       // Connect to the server via socket.io
       // const socket = io();
-  
+      var socket = io.connect("https://socket-notify-poc.vercel.app", {
+           forceNew: true,
+           transports: ["polling"],
+        });
+        
       // Listen for the 'notification' event from the server
       socket.on('notification', (message) => {
         showNotification(message);
