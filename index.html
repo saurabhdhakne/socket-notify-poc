@@ -11,9 +11,11 @@
     <h2 id="notification"></h2>
     <button onclick="notifyServer()">Notify Server</button>
     <script src="/socket.io/socket.io.js"></script>
+
     <script>
+        var socket = io.connect('https://socket-notify-poc.vercel.app', {secure: true});
       // Connect to the server via socket.io
-      const socket = io();
+      // const socket = io();
   
       // Listen for the 'notification' event from the server
       socket.on('notification', (message) => {
